@@ -68,13 +68,16 @@ ip_address = ip_address[0]
 if len(sys.argv) > 2:
     subnet_mask = sys.argv[2]
     cidr = convert_subnet_to_cidr(subnet_mask)
-
-# calculate some stuff
-network_address = calculate_network_address(ip_address, subnet_mask)
-network_cidr = network_address + '/' + str(cidr)
-print('IP address: ' + ip_address)
-print('Network address: ' + network_address)
-print('Subnet mask: ' + subnet_mask)
-print('CIDR notation: ' + network_cidr)
-print('Broadcast address: ' + calculate_broadcast_address(network_address, cidr))
-print('Number of hosts: ' + str(calculate_number_of_hosts(cidr)))
+try:
+    # calculate some stuff
+    network_address = calculate_network_address(ip_address, subnet_mask)
+    network_cidr = network_address + '/' + str(cidr)
+    print('IP address: ' + ip_address)
+    print('Network address: ' + network_address)
+    print('Subnet mask: ' + subnet_mask)
+    print('CIDR notation: ' + network_cidr)
+    print('Broadcast address: ' + calculate_broadcast_address(network_address, cidr))
+    print('Number of hosts: ' + str(calculate_number_of_hosts(cidr)))
+except:
+    sys.stderr.write("An error occured. Please provide valid IPv4 addresses and subnet masks.")
+    sys.exit(1)
