@@ -1,4 +1,5 @@
-# subnet-calculator
-A simple calculator to calculate some subnet-relating stuff.
+# Subnet calculator
 
-You can either provide a ip-address in CIDR notation or a ip-address and subnet mask. You will receive the network address, broadcast address and the number of hosts.
+This simple subnet calculator helps you with calculating network subnets. Just provide an ip address and the subnet mask and you will receive a complete list with the network address, number of hosts in the network, broadcast address and the CIDR-notation for the network.
+
+Happy networking :smiley:
