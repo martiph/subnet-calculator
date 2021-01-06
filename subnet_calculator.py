@@ -3,10 +3,8 @@ import sys
 def convert_cidr_to_subnet(cidr):
     subnet_bin = ''
     subnet = []
-    for i in range(int(cidr)):
-        subnet_bin += '1'
-    while(len(subnet_bin)<32):
-        subnet_bin += '0'
+    subnet_bin = subnet_bin.ljust(cidr, "1")
+    subnet_bin = subnet_bin.ljust(32, "0")
     for i in range(0, 32, 8):
         subnet.append(str(int(subnet_bin[i : i+8],2)))
     subnet_mask = '.'.join(subnet)
