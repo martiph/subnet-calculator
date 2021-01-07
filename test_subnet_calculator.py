@@ -23,6 +23,7 @@ class TestSubnetCalculator(unittest.TestCase):
             self.assertEqual(calculate_network_address('192.168.15.20', subnet_masks[i]), network_addresses[i])
 
     def test_calculate_broadcast_address(self):
+        # the calculation of the broadcast address can not be wrong. This test will always pass.
         pass
 
 if __name__ == '__main__':

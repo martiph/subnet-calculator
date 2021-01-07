@@ -35,9 +35,8 @@ def calculate_number_of_hosts(cidr):
 
 def calculate_broadcast_address(ip, cidr):
     host_bit = ''
-    for i in range(32 - int(cidr)):
-        host_bit += '1'
-    host_bit = host_bit.zfill(32)
+    host_bit = host_bit.ljust(32 - int(cidr), '1')
+    host_bit = host_bit.ljust(32, '0')
     ip_list = ip.split('.')
     host_mask = []
     for i in range(0, 32, 8):
