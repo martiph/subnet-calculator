@@ -57,10 +57,10 @@ def calculator(ip_address, subnet_mask = None):
 
     ip_address = ip_address.split('/')
     if len(ip_address) == 2 and subnet_mask is None:
-        if ip_address[1] in range(0,33):
-            cidr = ip_address[1]
+        if int(ip_address[1]) in range(0,33):
+            cidr = int(ip_address[1])
         else:
-            print("Valid CIDR ranges are from /0 to /32")
+            print("Valid CIDR ranges are from /0 to /32, {} is outside of this range".format(ip_address[1]))
             sys.exit(1)
         subnet_mask = convert_cidr_to_subnet(cidr)
     elif len(ip_address) == 1 and subnet_mask is not None:
